@@ -1,0 +1,153 @@
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Apply Poppins font to the entire body */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    background-color:#0F0F32;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 45px
+} 
+
+.wrapper .card {
+    background-color:beige;
+    border-radius: 15px;
+    box-shadow : 0px 5px 10px #111;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    transition: .5s ease;
+}
+
+.wrapper .card:hover{
+    scale: 110%;
+    height: 400px;
+}
+
+.wrapper .card .img {
+    position: relative;
+    background-color: beige;
+    background-position: 50% 50%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    background-image: var(--img);
+
+    width: 100%;
+    height: 250px;
+    filter: blur(25px);
+    background-color: gray;
+
+    animation: out .5s ease;
+    transition: .5s;
+}
+
+@keyframes out {
+    0% {background-size: 120%;}
+    40% {background-size: 140%;}
+    100% {background-size: 120%;}
+}
+
+.wrapper .card:hover .img {
+    animation: in .5s ease;
+    filter: blur(0px);
+}
+
+@keyframes in {
+    0% {background-size: 120%;}
+    40% {background-size: 140%;}
+    100% {background-size: 120%;}
+}
+
+.wrapper .card .img::before{
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    height: 80px;
+    border-radius: 40px;
+    background: beige;
+}
+
+.wrapper .card .img::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 75px 70px 0px 40px beige;
+}
+
+.wrapper .card .content {
+    position: relative;
+    margin: 0px 30px;
+    top: -20px;
+    z-index: 10;
+    transition: .5s;
+}
+
+.wrapper .card .content h3 {
+    position: relative;
+    font-size: 20px;
+    color: #222;
+}
+
+.wrapper .card .content h3 span {
+    position: absolute;
+    font-weight: 400;
+    font-size: 12px;
+    bottom: -12px;
+    opacity: .75;
+}
+
+.wrapper .card .content p {
+    position: relative;
+    color: #222;
+    font-size: 15px;
+    opacity: 0;
+    padding-top: 20px;
+
+    transition: .5s;
+}
+
+.wrapper .card:hover .content p{
+    opacity: 1;
+}
+
+footer {
+    font-size: small;
+    height: 5vh;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: slategray;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
