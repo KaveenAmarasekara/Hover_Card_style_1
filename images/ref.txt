@@ -1,0 +1,2 @@
+#This folder is to upload your images.
+#Mind to rename them {1..n}.jpg, where n is the number of cards.
